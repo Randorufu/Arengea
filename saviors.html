@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saviors of Arengea</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="saviors-style.css" />
+  <link rel="icon" href="favicon.png">
+  <script>
+  $(document).ready(() => {
+  const toggleButton = $('.show-btn');
+  const items = document.querySelectorAll('.story > p');
+  let index = 0;
+  toggleButton.on('click', () => {
+     $(items[index]).removeClass('hidden');
+     $(items[index]).addClass('selected');
+     $(items[index-1]).removeClass('selected');
+     index = index + 1;
+     $('html, body').scrollTop($(".show-btn").offset().top);
+     if(index === items.length){
+       $('.show-btn').addClass('hidden');
+     }
+  });
+  });
+  </script>
+</head>
+<body>
+
+<h2>Saviors of Arengea</h2>
+  <p>Arengea, a vast land of many peoples has enjoyed a century of peace. From the beautiful green hills to the peaks of Kalduran, all was well — or so it seemed.</p>
+<div class="story">
+
+    <p class="hidden">An assembly of heroes has begun at the great merchant city of Medial, named as such as sits in the center of all the land. A horn roars in the Grand Hall as the Archduke of Medial rises to greet the assembly.</p>
+    <p class="hidden">"I have received a letter of distress from Minare. The Aquifer has grown afoul. Alas, I am afraid that this problem has not been caused by any natural phenomenon. Nay, many a report claims a growing number of spirits and not just nixies either, but terrible creatures that have not been seen for an age."</p>
+    <p class="hidden">"I call upon you heroes. Journey to Minare and put these demons to rest. Set first for the inn <em>8 leagues to the South</em> and meet there with the Minaren envoy."</p>
+    <p class="hidden">Exchanging pleasantries, the heroes become acquainted. After much discussion, they retire to the local inn at Medial and <em>rest</em> until morning.</p>
+    <p class="hidden">By the next afternoon, the party had already marched nearly 8 leagues and neared the southern inn. "Help! Stay back, creature!" Just off the road, a disheveled man was being toyed with by a pack of lesser demons. <br>[<em>Draw 3 enemy cards and begin combat.</em>]</p>
+
+</div>
+<div class="container">
+<div class="center">
+<button type="button" class="show-btn center">Show Next</button>
+  </div>
+</div>
+
+</body>
+</html>
